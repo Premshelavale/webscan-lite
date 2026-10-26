@@ -1,0 +1,98 @@
+{
+  "tool": "WebScan-Lite v1.0",
+  "target": "http://localhost:3000",
+  "final_url": "http://localhost:3000/",
+  "scanned_at": "2026-10-25T02:05:54.686798+00:00",
+  "score": 56,
+  "grade": "C",
+  "findings": [
+    {
+      "id": "HTTPS-01",
+      "title": "Site served over plain HTTP",
+      "severity": "HIGH",
+      "owasp": "A02 Cryptographic Failures",
+      "evidence": "Scheme='http'",
+      "remediation": "Serve all traffic over HTTPS and 301-redirect HTTP\u2192HTTPS."
+    },
+    {
+      "id": "HDR-content-security-policy",
+      "title": "Missing header: content-security-policy",
+      "severity": "HIGH",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "Header absent",
+      "remediation": "Add: Content-Security-Policy: default-src 'self'"
+    },
+    {
+      "id": "HDR-strict-transport-security",
+      "title": "Missing header: strict-transport-security",
+      "severity": "MEDIUM",
+      "owasp": "A02 Cryptographic Failures",
+      "evidence": "Header absent",
+      "remediation": "Add: Strict-Transport-Security: max-age=31536000; includeSubDomains"
+    },
+    {
+      "id": "HDR-OK-x-content-type-options",
+      "title": "'x-content-type-options' present",
+      "severity": "INFO",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "nosniff",
+      "remediation": "No action required."
+    },
+    {
+      "id": "HDR-OK-x-frame-options",
+      "title": "'x-frame-options' present",
+      "severity": "INFO",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "SAMEORIGIN",
+      "remediation": "No action required."
+    },
+    {
+      "id": "HDR-referrer-policy",
+      "title": "Missing header: referrer-policy",
+      "severity": "LOW",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "Header absent",
+      "remediation": "Add: Referrer-Policy: strict-origin-when-cross-origin"
+    },
+    {
+      "id": "HDR-permissions-policy",
+      "title": "Missing header: permissions-policy",
+      "severity": "LOW",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "Header absent",
+      "remediation": "Add: Permissions-Policy: geolocation=(), camera=()"
+    },
+    {
+      "id": "COOK-00",
+      "title": "No cookies on landing page",
+      "severity": "INFO",
+      "owasp": "A07 Auth Failures",
+      "evidence": "No Set-Cookie",
+      "remediation": "No action required."
+    },
+    {
+      "id": "MTH-OK",
+      "title": "No risky HTTP methods",
+      "severity": "INFO",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "Allow: not set",
+      "remediation": "No action required."
+    },
+    {
+      "id": "EXP-OK",
+      "title": "No sensitive files exposed",
+      "severity": "INFO",
+      "owasp": "A01 Broken Access Control",
+      "evidence": "Checked 8 paths",
+      "remediation": "No action required."
+    },
+    {
+      "id": "DIR-OK",
+      "title": "No directory listing on root",
+      "severity": "INFO",
+      "owasp": "A05 Security Misconfiguration",
+      "evidence": "Normal document",
+      "remediation": "No action required."
+    }
+  ]
+}
